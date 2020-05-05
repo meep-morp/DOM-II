@@ -112,3 +112,54 @@
     }
   }
 }// home
+
+
+// JavaScript Classes & Animations
+
+// Mouse Over
+.vanish {
+  animation-name: vanish;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+@keyframes vanish {
+  0% {opacity: 100%;}
+  50% {opacity: 50%;}
+  100% {opacity: 0%;}
+}
+.appear {
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+@keyframes appear {
+  0% {opacity: 0%;}
+  50% {opacity: 50%;}
+  100% {opacity: 100%;}
+}
+
+// Keydown
+.goodbye {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.pikaBye {
+  margin: 0 auto;
+  width: 90%;
+}
+
+// Wheel
+
+//Drag and Drop
+.dropDestination {
+  background-color: greenyellow;
+}
