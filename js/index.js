@@ -1,17 +1,4 @@
 // Create Unique Event Listeners
-
-// *  Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
-// 	*  `mouseover`
-// 	*  `keydown`
-// 	*  `wheel`
-// 	*  `drag / drop`
-// 	*  `load`
-// 	*  `focus`
-// 	*  `resize`
-// 	*  `scroll`
-// 	*  `select`
-// 	*  `dblclick`
-
 // Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 // *  Nest two similar events somewhere in the site and prevent the event propagation properly
@@ -22,7 +9,6 @@
 const boatImg = document.querySelectorAll("img")[4];
 const body = document.querySelector("body");
 const pikaBye = document.querySelector(".pikaBye");
-const sandBus = document.querySelector("#draggable");
 
 // Mouse Over
 
@@ -58,43 +44,41 @@ body.addEventListener("keyup", (event) => {
 // Drag/Drop
 var dragged;
 
-document.addEventListener("drag", (event) => {
-
-}, false);
-
-
 document.addEventListener("dragstart", (event) => {
     dragged = event.target;
     event.target.style.opacity = 0.5;
 }, false);
 
 document.addEventListener("dragend", (event) => {
-    // MDN: Allows changes to allow drop.
-    
-    event.preventDefault();
+    event.target.style.opacity = "";
 }, false);
 
 document.addEventListener("dragover", (event) => {
-
+    // MDN: Allows changes to drop.
+    event.preventDefault();
 }, false);
 
-document.addEventListener("dragenter", (event) => {
-
-}, false);
-
-document.addEventListener("dragleave", (event) => {
-
-}, false);
+document.addEventListener("drop", (event) => {
+    // MDN: Prevents the image from opening as a link.
+    event.preventDefault();
+    event.target.classList.add("dropDestination");
+});
 
 
 // Load
-
+window.addEventListener("load", (event) => {
+    return ("page is fully loaded");
+  });
 
 // Focus
 
 
 // Resize
 
+const responsiveHelper = (event) => {
+    return(`Width: ${window.innerWidth} \n Height: ${window.innerHeight}`);
+}
+window.addEventListener("onResize", responsiveHelper);
 
 // Scroll
 

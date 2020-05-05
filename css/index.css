@@ -398,5 +398,19 @@ img {
   width: 90%;
 }
 .dropDestination {
-  background-color: greenyellow;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
