@@ -19,17 +19,33 @@
 // Variables
 
 const blocks = document.querySelectorAll(".block");
-const last = "1";
-const first = "5";
-const currentPosition = event.target.getAttribute("data-order");
 
-
-// Function
+// Animatiom Function
 
 const flyUp = (event) => {
-    event.target.style.transform = ("translate(0, -120px)")
+    blocks.forEach((block) => {
+        block.classList.remove("last");
+    });
+        event.target.classList.add("last");
+        event.target.classList.add("first");
 }
 
 blocks.forEach((block) => {
     block.addEventListener("click", flyUp);
 });
+
+const flyRight = (event) => {
+    event.target.classList.add("right");
+}
+
+blocks.forEach((block) => {
+    block.addEventListener("mousedown", flyRight);
+})
+
+blocks.forEach((block) => {
+    block.addEventListener("mouseup", (event) => {
+        blocks.forEach((block) => {
+            block.classList.remove("right");
+        })
+    }
+    )})   
