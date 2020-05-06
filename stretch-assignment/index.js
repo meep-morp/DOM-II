@@ -48,4 +48,4 @@ blocks.forEach((block) => {
             block.classList.remove("right");
         })
     }
-    )})   
+)})   
