@@ -142,7 +142,7 @@ logo.addEventListener("dblclick", spin);
 // ## Stretch Task:
 // *  Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
 
-
+// Added Vanish and Appear animations as well as a Rainbow and Spin Animation for the stretch goal.
 
 // ## Stretch assignment
 // *  Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
