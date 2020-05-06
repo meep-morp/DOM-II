@@ -9,6 +9,7 @@
 const boatImg = document.querySelectorAll("img")[4];
 const body = document.querySelector("body");
 const pikaBye = document.querySelector(".pikaBye");
+const header = document.querySelector("h2");
 const inputs = document.querySelectorAll("input");
 const focusClass = document.querySelectorAll("focus");
 const pictures = document.querySelectorAll(".container img");
@@ -45,7 +46,11 @@ body.addEventListener("keyup", (event) => {
 });
 
 //Wheel
+const changeColor = (event) => {
+    event.target.style.color = "red";
+}
 
+header.addEventListener("wheel", changeColor);
 
 // Drag/Drop
 
