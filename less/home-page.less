@@ -113,6 +113,65 @@
   }
 }// home
 
+// I'm adding my form that I made as a stretch goal to focus on because It look nice.
+
+.field {
+  .flex();
+  flex-direction: column;
+
+    input{
+      margin: 15px;
+      background-color: @eastern-blue;
+      color: white;
+      border-radius: 10px;
+
+      &:hover{
+        color: @font-color;
+        background: @footer-bg;
+        transition: 0.5s ease;
+
+        &:focus{
+          color: @font-color;
+          background: @footer-bg;
+          transition: 0.5s ease;
+        }
+      }
+    }
+
+    .instructions{
+      height: 50px;
+      width: 200px;
+    }
+
+    .dropdownbox{
+      .center();
+      flex-direction: column;
+
+      #vacation{
+      margin: 5px;
+      color: @eastern-blue;
+      background-color: @footer-bg;
+      border-radius: 8px;
+    }
+
+    input{
+      .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
+
+      &:hover{
+        color: @font-color;
+        background: @footer-bg;
+        transition: 0.5s ease;
+
+        &:focus {
+          color: @font-color;
+          background: @footer-bg;
+          transition: 0.5s ease;
+        }
+      }
+    }
+  }
+}
+
 
 // JavaScript Classes & Animations
 
@@ -154,7 +213,10 @@
 
 .pikaBye {
   margin: 0 auto;
-  width: 90%;
+  width: 75%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
 // Wheel
@@ -170,4 +232,31 @@
   0% {transform: rotate(0deg);}
   50% {transform: rotate(180deg);}
   100% {transform: rotate(360deg);}
+}
+
+// Focus 
+.focus {
+  animation-name: rainbow;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes rainbow {
+  0% {background-color: red;}
+  14% {background-color: orange;}
+  28% {background-color: yellow;}
+  41% {background-color: green;}
+  55% {background-color: blue;}
+  69% {background-color: indigo;}
+  83% {background-color: violet;}
+  100% {background-color: red;}
+}
+
+// Select 
+.log {
+  color: @eastern-blue;
+  font-weight: bold;
+  border: gray dashed 3px;
 }

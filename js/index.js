@@ -9,6 +9,12 @@
 const boatImg = document.querySelectorAll("img")[4];
 const body = document.querySelector("body");
 const pikaBye = document.querySelector(".pikaBye");
+const inputs = document.querySelectorAll("input");
+const focusClass = document.querySelectorAll("focus");
+const pictures = document.querySelectorAll(".container img");
+const log = document.querySelector(".log");
+const inputSelect = document.querySelector(".instructions");
+const logo = document.querySelector(".logo-heading");
 
 // Mouse Over
 
@@ -42,6 +48,7 @@ body.addEventListener("keyup", (event) => {
 
 
 // Drag/Drop
+
 var dragged;
 
 document.addEventListener("dragstart", (event) => {
@@ -66,29 +73,66 @@ document.addEventListener("drop", (event) => {
 
 
 // Load
+
 window.addEventListener("load", (event) => {
-    return ("page is fully loaded");
+    return console.log(("page is fully loaded"));
   });
 
 // Focus
 
+const rainbow = (event) => {
+    event.target.classList.add("focus");
+}
+
+inputs.forEach((input) => {
+    input.addEventListener("focus", rainbow);
+});
+
+const deFocus = (event) => {
+    event.target.classList.remove("focus");
+}
+inputs.forEach((focus) => {
+    focus.addEventListener("blur", deFocus);
+});
 
 // Resize
 
 const responsiveHelper = (event) => {
     return(`Width: ${window.innerWidth} \n Height: ${window.innerHeight}`);
 }
-window.addEventListener("onResize", responsiveHelper);
+window.addEventListener("resize", (event) => {console.log(responsiveHelper())});
 
 // Scroll
 
+pictures.forEach((pic) => {
+    pic.classList.add("vanish");
+});
+
+pictures.forEach((pics) => {
+    window.addEventListener("scroll", (event) => {
+        pics.classList.add("appear");
+        pics.classList.remove("vanish");
+    });
+});
 
 // Select
 
+// I got this Idea from MDN.. It was really cool so I recreated it. 
+
+const logThis = (event) => {
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    log.textContent = `You Selected: ${selection}`;
+}
+
+inputSelect.addEventListener("select", logThis)
 
 // Double Click
 
+const spin = (event) => {
+    event.target.classList.add("dropDestination");
+}
 
+logo.addEventListener("dblclick", spin);
 
 // ## Stretch Task:
 // *  Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
