@@ -13,10 +13,13 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  transition: 2s ease;
+  box-shadow: 0px 5px 10px lightgrey;
 }
 
 .block--red {
   background-color: red;
+  order: -1;
 }
 
 .block--blue {
@@ -33,4 +36,20 @@ body {
 
 .block--gray {
   background-color: gray;
+  order: 3;
+}
+
+/* JavaScript Variables and Animations */
+
+.last {
+  order: 4;
+}
+
+.first {
+  transform: translate(0, -480px);
+}
+
+.right{
+  transform: translate(1400px, 0);
+  transition: 5s ease;
 }

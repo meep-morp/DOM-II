@@ -10,6 +10,13 @@
           border-radius: @radius;
 }
 
+.flex(@justify:center, @align:center){
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
   .border-radius(15px);
   .center;
